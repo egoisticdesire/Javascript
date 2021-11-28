@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        'use strict';
+        /*. 
+            Реализовать функцию с тремя параметрами: function mathOperation(arg1, arg2, operation),
+            где arg1, arg2 – значения аргументов, operation – строка с названием операции. В зависимости от
+            переданного значения операции (использовать switch) выполнить одну из арифметических 
+            операций (использовать функции из задания 4) и вернуть полученное значение
+        */
+
+        function math_operation(num_1, num_2, operation) {
+            switch (operation) {
+                case '+':
+                    return `Сумма: ${num_1 + num_2}`;
+                case '-':
+                    return `Разность: ${num_1 - num_2}`;
+                case '*':
+                    return `Произведение: ${num_1 * num_2}`;
+                case '/':
+                    if (num_2 != 0) {
+                        return `Деление: ${num_1 / num_2}`;
+                    } else {
+                        return 'Деление: На ноль делить нельзя!';
+                    }
+            }
+        }
+
+        let a = +prompt('Первое число:');
+        let b = +prompt('Второе число:');
+        let operation = prompt('Выберите действие:');
+
+        alert(math_operation(a, b, operation));
+    </script>
+</body>
+
+</html>
